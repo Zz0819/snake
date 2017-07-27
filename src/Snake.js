@@ -15,19 +15,11 @@ class Snake extends Tiny.Container {
     this.snakeBody = [];
     this.initSnake();
 
-    this.x = 0;
-    this.y = 0;
-
     new Con((pos) => {
-      let {x, y} = pos;
-      if(!x && !y) {
-        this.snakeConfig.distanceX = -this.speed * this.x;
-        this.snakeConfig.distanceY = -this.speed * this.y;
-      } else {
-        this.snakeConfig.distanceX = -this.speed * x;
-        this.snakeConfig.distanceY = -this.speed * y;
-        this.x = x;
-        this.y = y;
+      let {cos, sin} = pos;
+      if(cos && sin) {
+        this.snakeConfig.distanceX = -this.speed * cos;
+        this.snakeConfig.distanceY = -this.speed * sin;
       }
     });
   }

@@ -35,7 +35,7 @@ export default class joyCon {
       let obj = this.calc(x, y);
       this.callback(obj);
       if(c > maxDistance) {
-        this.con.style.cssText = `left:${-maxDistance * obj.x + this.joy_r}px;top:${-maxDistance * obj.y + this.joy_r}px;`;
+        this.con.style.cssText = `left:${-maxDistance * obj.cos + this.joy_r}px;top:${-maxDistance * obj.sin + this.joy_r}px;`;
       } else {
         this.con.style.cssText = `left:${pageX - this.joy_x}px;top:${pageY - this.joy_y}px;`;
       }
@@ -55,8 +55,8 @@ export default class joyCon {
     let _angle = 180 + Math.atan2(y, x) / (Math.PI / 180);
 
     return {
-      x : Math.cos(_angle * (Math.PI / 180)),
-      y : Math.sin(_angle * (Math.PI / 180))
+      cos : Math.cos(_angle * (Math.PI / 180)),
+      sin : Math.sin(_angle * (Math.PI / 180))
     };
   }
 }
