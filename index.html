@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>snake</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="full-screen" content="yes"/>
+<meta name="screen-orientation" content="portrait"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="360-fullscreen" content="true"/>
+</head>
+<style>
+html, body, p, div {margin:0;padding:0;}
+body {background-color: #000;font-size:4vmin;}
+html, body {height: 100%}
+.bar {margin:0 auto;margin-top:40vh;height:1vmin;width:80%;border-radius:0.5vmin;overflow:hidden;background:#666;}
+.bar i {display:block;width:0;height:1vmin;background-color:#999;}
+p {margin-top:2vmin;text-align:center;color:#ddd;}
+.joy-con {
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  bottom: 10px;
+  margin-left: -60px;
+}
+
+.joy-con .con {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, .8);
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  border-radius: 50%;
+}
+.game-time {
+  position: absolute;
+  right: 10px;
+  color: pink;
+}
+</style>
+<body>
+<div class="joy-con">
+  <div class="con js-con"></div>
+</div>
+<p class="game-time js-game-time"></p>
+<div class="bar">
+    <i id="progress"></i>
+</div>
+<p id="percent">Loading..</p>
+<script src='https://a.alipayobjects.com/g/tiny/tiny/0.3.1/tiny.js'></script>
+<script type="text/javascript" src="./dist/app.js"></script>
+<!--<script type="text/javascript" src="./src/control.js"></script>-->
+<!--<script src='src/Resource.js'></script>-->
+<!--<script src='src/StartLayer.js'></script>-->
+<!--<script src='main.js'></script>-->
+</body>
+</html>
