@@ -5,6 +5,7 @@ import RESOURCES from './src/Resource.js';
     //showFPS: true,
     orientation: 0,
     dpi: 2,
+    fixSize: true,
     height: window.innerHeight, // 以屏幕可视区域的高作为 canvas 的高度
     width: window.innerWidth, // 以屏幕可视区域的宽作为 canvas 的高度
     renderOptions: {
