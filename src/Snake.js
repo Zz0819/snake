@@ -1,4 +1,5 @@
 import Con from './control';
+import {Alert} from 'tinyjs-plugin-ui';
 
 class Snake extends Tiny.Container {
   constructor(layer) {
@@ -13,6 +14,7 @@ class Snake extends Tiny.Container {
     };
     this.path = [];
     this.snakeBody = [];
+    this.running = true;
     this.initSnake();
 
     new Con((pos) => {
@@ -22,6 +24,7 @@ class Snake extends Tiny.Container {
         this.snakeConfig.distanceY = -this.speed * sin;
       }
     });
+    this.alert = new Alert(Tiny.app, '再来过');
   }
 
   initSnake = () => {
@@ -49,6 +52,10 @@ class Snake extends Tiny.Container {
   };
 
   run = (food) => {
+    if(!this.running) {
+      return;
+    }
+
     let {distanceX, distanceY} = this.snakeConfig;
     let R = this.children[0].width;
     let r = R / 2;
@@ -60,11 +67,10 @@ class Snake extends Tiny.Container {
         let ang = 180 + Math.atan2(distanceY, distanceX) / (Math.PI / 180) - 90;
         item.setRotation(Tiny.deg2radian(ang));
         if(item.x > Tiny.WIN_SIZE.width - r || item.y > Tiny.WIN_SIZE.height - r || item.x < r || item.y < r) {
-          Tiny.app.stop();
-          setTimeout(() => {
-            alert('杯具, 您撞墙了, 大侠请重新来过.');
+          this.running = false;
+          this.alert.alert('杯具, 您撞墙了, 大侠请重新来过.', () => {
             location.reload();
-          }, 50);
+          });
           return;
         }
 
@@ -86,12 +92,12 @@ class Snake extends Tiny.Container {
     let head = this.snakeBody[0];
     let foodArr = food.children;
     if(!foodArr.length) {
-      Tiny.app.stop();
+      this.running = false;
       let time = (Tiny.ticker.shared.lastTime / 1000).toFixed(0);
-      setTimeout(() => {
-        alert(`您用时${time}s吃完所有食物,再接再厉哦~`);
+      this.alert.alert(`您用时${time}s吃完所有食物,再接再厉哦~`, () => {
         window.location.reload()
-      }, 100);
+      });
+
       return;
     }
 

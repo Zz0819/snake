@@ -10,7 +10,7 @@ import RESOURCES from './src/Resource.js';
     width: window.innerWidth, // 以屏幕可视区域的宽作为 canvas 的高度
     renderOptions: {
       antialias: true,
-      backgroundColor: 0xffffff,
+      backgroundColor: 0xADADAD,
     },
   };
   Tiny.app = new Tiny.Application(config);
