@@ -1,4 +1,4 @@
-# 
+#
 
 > The Tiny.js Game build by tinyjs client
 
@@ -12,7 +12,7 @@
 ## 关于 Tiny.js
 
 - `官网`: http://tinyjs.net
-- `指南`: http://tinyjs.net/#/tutorial/start
-- `API`: http://tinyjs.net/docs/
+- `指南`: http://tinyjs.net/guide/
+- `API`: http://tinyjs.net/api/
 - `源码`: http://gitlab.alipay-inc.com/tiny/tiny
 - `反馈`: http://gitlab.alipay-inc.com/tiny/tiny/issues
