@@ -1,7 +1,7 @@
 # Tiny.js 开发感受(贪吃蛇)
 
 ### 前期准备
-* 根据 Tiny 官网的开始教程构建出项目，详情[点这里~](http://tinyjs.net/#/tutorial/start)
+* 根据 Tiny 官网的开始教程构建出项目，详情[点这里~](http://tinyjs.net/guide/)
 * 如果你是 es6 的重度使用者，你可能需要自己配置一下 webpack，Tiny 默认没有引入 babel，引入步骤如下：
 
 1. 安装 babel
