@@ -14,5 +14,3 @@
 - `官网`: http://tinyjs.net
 - `指南`: http://tinyjs.net/guide/
 - `API`: http://tinyjs.net/api/
-- `源码`: http://gitlab.alipay-inc.com/tiny/tiny
-- `反馈`: http://gitlab.alipay-inc.com/tiny/tiny/issues

@@ -1,7 +1,7 @@
 # Tiny.js 开发感受(贪吃蛇)
 
 ### 前期准备
-* 根据 Tiny 官网的开始教程构建出项目，详情[点这里~](http://tinyjs.net/guide/)
+* 根据 Tiny 官网的开始教程构建出项目，详情[点这里~](http://tinyjs.net/guide/start.html)
 * 如果你是 es6 的重度使用者，你可能需要自己配置一下 webpack，Tiny 默认没有引入 babel，引入步骤如下：
 
 1. 安装 babel
@@ -109,7 +109,7 @@ export default Layer;
 
 ##### 接下来就是实现蛇类和食物类了。
 
-```
+``` js
 // 蛇类
 class Snake extends Tiny.Container {
   constructor(layer) {
@@ -180,7 +180,7 @@ createSprite = (img) => {
 
 ##### 蛇类应该会有一个 run 和 eat 方法，也就是吃和运动。
 
-```
+``` js
 run = (food) => {
   let {distanceX， distanceY} = this.snakeConfig;
   let R = this.children[0].width;
@@ -253,7 +253,7 @@ eat = (food) => {
 
 ##### 以上就基本完成了蛇类的实现。这里并没有使用 Tiny 的碰撞检测，因为需求简单。推荐大家使用 Tiny 实现的碰撞检测。
 
-```
+``` js
 // 食物类
 class Food extends Tiny.Container {
   constructor(layer) {
@@ -287,7 +287,7 @@ class Food extends Tiny.Container {
 
 ##### 实现 render 方法
 
-```
+``` js
 render = () => {
   // 通过初始化的参数渲染出食物
   for(let i = 0; i < this.foodNum; i++) {
@@ -346,7 +346,7 @@ randomPos = () => {
 
 ##### 食物类和蛇类我们都实现好了，现在我们需要让蛇动起来。
 
-```
+``` js
 /*
  * 我们可以通过最挫的 setInterval 定时的去调用蛇类的 run 成员方法，但是这是十分不精确的。至于为什么不精确，请自行 google，setInterval 的运行机制。
  * 其实这里 Tiny 提供了一个游戏的主调度， 按照一秒60帧去不断的调用你的代码。
